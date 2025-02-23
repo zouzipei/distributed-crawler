@@ -27,6 +27,7 @@ class CrawlerWorker(multiprocessing.Process):
     async def fetch(self, session: aiohttp.ClientSession, url: str) -> str:
         """遵守robots协议执行抓取"""
         # ...保持原有fetch方法不变...
+
     async def run_async(self):
         """异步运行主逻辑（增强版）"""
         consumer = None
@@ -102,7 +103,6 @@ class CrawlerWorker(multiprocessing.Process):
             if producer:
                 await producer.stop()
             logging.info(f"Worker {self.node_id} 已安全关闭")
-
 
     def run(self):
         """进程入口点（增强事件循环管理）"""
