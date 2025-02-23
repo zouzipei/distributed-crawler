@@ -2,11 +2,12 @@ from confluent_kafka import Producer, Consumer
 import json
 import hashlib
 import time
+
 # 新增时间模块用于测试超时控制
 
 # Kafka 配置
 #容器内运行使用 kafka:9092，宿主机运行使用 localhost:9092
-KAFKA_BROKER = 'kafka:9092'  # 如果分发器在 Docker 内运行
+KAFKA_BROKER = 'localhost:9092'  # 如果分发器在 Docker 内运行
 # 或 # 如果分发器在宿主机运行
 INPUT_TOPIC = "crawler_urls"        # 输入主题
 OUTPUT_TOPIC_HASH = "crawler_tasks_hash"
